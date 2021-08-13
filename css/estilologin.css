@@ -5,3 +5,99 @@ body {
     background-position: center;
     background-attachment: fixed;
 }
+
+div.container-p5 {
+    width: 100%;
+    padding: 20px;
+    margin:auto;
+    position: relative;
+    margin-top: 100px;
+
+}
+
+.caja-fondo {
+width: 100%;
+padding: 10px 20px;
+display: flex;
+justify-content: center;
+}
+
+.caja-fondo div {
+    margin: 100px 40px;
+ margin-top: 200px;
+}
+
+.caja-fondo div p,
+.caja-fondo div button{
+    margin-top: 30px;
+}
+
+.caja-fondo button{
+    padding: 10px 40px;
+    background-color:transparent;
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 300ms;
+    cursor: pointer;
+}
+.caja-fondo button:hover {
+    background: #007fff;
+    color:black;
+
+}
+
+/* Formularios */
+.contenedor-formulario {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 450px;
+    position:relative;
+    top: -185px;
+    left: 10px;
+}
+
+.contenedor-formulario form{
+    width:100%;
+    padding: 80px 20px;
+    background: white;
+    position: absolute;
+    border-radius: 20px;
+
+
+}
+.contenedor-formulario form h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contenedor-formulario form input{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: #f2f2f2;
+}
+
+.contenedor-formulario form button {
+    padding: 10px 40px;
+    margin-top: 40px;
+    border: none;
+    background: #f2f2f2;
+}
+.contenedor-formulario form button:hover {
+    background: #007fff;
+}
+
+.formulario-login{
+    opacity: 1;
+    display: block;
+
+}
+
+.formulario-registro {
+    display: none;
+}
+
+
