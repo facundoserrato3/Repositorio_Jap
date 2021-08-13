@@ -4,39 +4,36 @@ const ORDER_BY_PROD_COUNT = "Cant.";
 var currentSortCriteria = undefined;
 var minCount = undefined;
 var maxCount = undefined;
-var currentProductsArray = [];
+
 
 
 function showProductsList() {
     let adjuntarcontenidoHTML = "";
-let currentProductsArray = []
-    for (let i=0; i < currentProductsArray.length; i++) {
-        let product = currentProductsArray[i];
+var productsArray = [];
+    for (let i=0; i < productsArray.length; i++) {
+        let product = productsArray[i];
 
-
-    
-    if(((minCount == undefined) || (minCount != undefined && parseInt(product.productCount) >= minCount)) &&
-     ((maxCount == undefined) || (maxCount != undefined && parseInt(product.productCount) <= maxCount))) {
-        adjuntarcontenidoHTML += `
+        adjuntarcontenidoHTML +=  `
         <a href="product-info.html" class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-3">
-                    <img src="  ${product.imgSrc} " alt=" ${product.description}" class="img-thumbnail">
+                    <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
                 </div>
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
-                        <h4 class="mb-1">${product.name}</h4>
-                        <small class="text-muted"> ${product.productCount} artículos</small>
+                        <h4 class="mb-1">`+ product.name +`</h4>
+                        <small class="text-muted">` + product.productCount + ` artículos</small>
                     </div>
-                    <p class="mb-1">${product.description}</p>
+                    <p class="mb-1">` + product.description + `</p>
                 </div>
             </div>
         </a>
         `
+    
      }
      document.getElementById("prod-list-container").innerHTML = adjuntarcontenidoHTML;
     }
-}
+
 
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
@@ -45,7 +42,10 @@ let currentProductsArray = []
 document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(PRODUCTS_URL).then(function(resultObj){
         if (resultObj.status === "ok"){
+            
+            productsArray = resultObj.data;
             showProductsList();
+
         }
     });
 
