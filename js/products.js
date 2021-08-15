@@ -5,13 +5,12 @@ var currentSortCriteria = undefined;
 var minCount = undefined;
 var maxCount = undefined;
 
-
-
-function showProductsList() {
-    let adjuntarcontenidoHTML = "";
 var productsArray = [];
-    for (let i=0; i < productsArray.length; i++) {
-        let product = productsArray[i];
+
+function showProductsList(array) {
+    let adjuntarcontenidoHTML = "";
+    for (let i=0; i < array.length; i++) {
+        let product = array[i];
 
         adjuntarcontenidoHTML +=  `
         <a href="product-info.html" class="list-group-item list-group-item-action">
@@ -22,7 +21,7 @@ var productsArray = [];
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
                         <h4 class="mb-1">`+ product.name +`</h4>
-                        <small class="text-muted">` + product.productCount + ` artículos</small>
+                        <small class="text-muted">` + product.soldCount + ` artículos</small>
                     </div>
                     <p class="mb-1">` + product.description + `</p>
                 </div>
@@ -44,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         if (resultObj.status === "ok"){
             
             productsArray = resultObj.data;
-            showProductsList();
+            showProductsList(productsArray);
 
         }
     });

@@ -6,13 +6,19 @@ var formulario_login = document.getElementsByClassName("formulario-login");
 var formulario_registro = document.getElementsByClassName("formulario-registro");
 var caja_login = document.getElementsByClassName("caja-login");
 var caja_registro = document.getElementsByClassName("caja-registro");
-var correo_electronico = document.getElementById("correo-electronico");
-var contraseña = document.getElementById("contraseña")
-function iniciarSesion(correo_electronico, contraseña){
-    if(correo_electronico.value !== null && contraseña.value !== null) {
-    window.location.assign = ("home.html");
 
-    }
+function iniciarSesion(){
+    var correo_electronico = document.getElementById("correo-electronico").value;
+var contraseña = document.getElementById("contraseña").value;
+
+
+    if(correo_electronico.length === 0 || correo_electronico == "" && contraseña.length === 0 || contraseña == " ") {  
+        alert("Ingrese Usuario y Contraseña")
+
+    } else { window.location.href = "home.html";
+        }
+
+    
 
 }
 
