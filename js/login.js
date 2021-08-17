@@ -1,23 +1,25 @@
 document.getElementById("boton-registro").addEventListener("click", registro);
 document.getElementById("boton-inicio").addEventListener("click", login);
-document.getElementById("ingresar").addEventListener("click", iniciarSesion);
 var contenedor_formulario = document.getElementsByClassName("contenedor-formulario");
 var formulario_login = document.getElementsByClassName("formulario-login");
 var formulario_registro = document.getElementsByClassName("formulario-registro");
 var caja_login = document.getElementsByClassName("caja-login");
 var caja_registro = document.getElementsByClassName("caja-registro");
 
+function validar(){
+     correo_electronico = document.getElementById("correo-electronico").value;
+ contraseña = document.getElementById("contraseña").value;
+
+return correo_electronico.trim() != "" && contraseña.trim() != "" 
+
+}
+
 function iniciarSesion(){
-    var correo_electronico = document.getElementById("correo-electronico").value;
-var contraseña = document.getElementById("contraseña").value;
+   validar();
 
-
-    if(correo_electronico.length === 0 || correo_electronico == "" && contraseña.length === 0 || contraseña == " ") {  
-        alert("Ingrese Usuario y Contraseña")
-
-    } else { window.location.href = "home.html";
-        }
-
+    if(validar()) {
+        window.location.href = "home.html"
+    }
     
 
 }
