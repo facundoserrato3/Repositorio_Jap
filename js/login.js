@@ -10,15 +10,16 @@ function validar(){
      correo_electronico = document.getElementById("correo-electronico").value;
  contraseña = document.getElementById("contraseña").value;
 
-return correo_electronico.trim() != "" && contraseña.trim() != "" 
+return correo_electronico.trim() != "" && contraseña.trim() != "" ;
+
 
 }
 
 function iniciarSesion(){
-   validar();
+   
 
     if(validar()) {
-        window.location.href = "home.html"
+        guardarDatos();
     }
     
 
@@ -41,6 +42,12 @@ function login(){
     caja_login[0].style.opacity = "0";
 }
 
+
+
+function guardarDatos() {
+    var usuarioingresado = document.getElementById("correo-electronico");
+    localStorage.setItem("usuario", JSON.stringify({usuario: usuarioingresado.value}))
+}
 
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
