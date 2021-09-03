@@ -24,7 +24,10 @@ function iniciarSesion(){
     
 
 }
-
+function cerrarSesion(){
+    localStorage.removeItem("usuario")
+    location.href="index.html";
+}
 // Funcion que mueve cartel de registro
 function registro() {
     formulario_registro[0].style.display = "block";
