@@ -15,26 +15,37 @@ function mostrarImagenes(array) {
         document.getElementById("productImagesGallery").innerHTML = adjuntarcontenidoHtml;
     }
 }
-function productosRelacionados(producto){
-    let adjuntarcontenido ="";
-    for (let i=0; i<producto.length; i++) {
-        let productorelacionado = producto[i]
-        adjuntarcontenido += `
+function productosRelacionados(array) {
+    let contenidoparaadjuntar = "";
+    for (let i=0; i < infoproducto.relatedProducts.length; i++) {
+        let product = array[infoproducto.relatedProducts[i]]
+       contenidoparaadjuntar += `
         <div class="col-lg-3 col-md-4 col-6">
             <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src=" ${productorelacionado.imageSrc}" alt="">
+                <img class="img-fluid img-thumbnail" src=" ${product.imgSrc}" alt="">
             </div>
         </div>
         `
-        document.getElementById("relatedProducts").innerHTML = adjuntarcontenido;
+        document.getElementById("relatedProducts").innerHTML = contenidoparaadjuntar;
     }
+   
 }
+
+
+    
+
+
+
     function mostrarComentarios(comentarios) {
         let adjuntarcontenido= "";
         for (let i=0; i<comentarios.length; i++) {
             let comentario = comentarios[i]
             adjuntarcontenido += ` <div class="list-group">
-            <div class="col-6">
+            <div class="col-6"> <span class="fa fa-star" id="1"></span>
+            <span class="fa fa-star" id = "2"></span>
+            <span class="fa fa-star" id="3"></span>
+            <span class="fa fa-star" id="4"></span>
+            <span class="fa fa-star" id="5"></span>           
                 ${comentario.score} <h4 class="mb-1">${comentario.user}</h4> <strong>${comentario.dateTime}</strong
             </div>
             <div class="col">
@@ -76,8 +87,8 @@ function mostrarinfoProductos(products) {
 document.addEventListener("DOMContentLoaded", function(e){
 getJSONData(PRODUCT_INFO_URL).then(function(resultObj){
     if (resultObj.status = "ok") {
-        producto = resultObj.data;
-        mostrarinfoProductos(producto)
+        infoproducto = resultObj.data;
+        mostrarinfoProductos(infoproducto)
     }
 })
 });
@@ -89,3 +100,11 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
     })
     });
+    document.addEventListener("DOMContentLoaded", function(e){
+        getJSONData(PRODUCTS_URL).then(function(resultObj){
+            if (resultObj.status = "ok") {
+                producto = resultObj.data;
+                productosRelacionados(producto)
+            }
+        })
+        });
