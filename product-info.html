@@ -13,6 +13,7 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link href="css/estrellas.css" rel="stylesheet">
 </head>
 
 <body>
@@ -24,6 +25,7 @@
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
       <a class = "py-2 d-none d-md-inline-block" href= "#" id="nombre"></a>
+      <button class = "btn btn-dark col-1 btn-block" onclick="cerrarSesion()">Salir</button>
     </div>
   </nav>
   <div class="container p-5" >
@@ -36,6 +38,12 @@
     <h3 id="productName"></h3>
     <hr class="my-3">
     <dl>
+      
+      <dt>Imágenes ilustrativas</dt>
+      <dd>
+        <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+        </div>
+      </dd>
       <dt>Descripción</dt>
       <dd>
         <p id="productDescription"></p>
@@ -55,21 +63,37 @@
       <dd>
         <p id="productCategory"></p>
       </dd>
-
-      <dt>Imágenes ilustrativas</dt>
-      <dd>
-        <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
-        </div>
-      </dd>
-      <dt>Productos Relacionados</dt>
-      <dd>
-        <p id="relatedProducts"></p>
-      </dd>
-      <dt>Comentarios</dt>
+<br>
+      <dt>Comentarios</dt><br>
       <dd>
         <p id="comments"></p>
       </dd>
+      
+      <div class="form-group">
+        <label for="nuevocomentario">Ingrese un comentario</label>
+        <textarea class="form-control" id="nuevocomentario" rows="6"></textarea>
+        <div class="rating">
+          <input id="radio1" type="radio" name="estrellitas" value="5">
+          <label for="radio1"><i class="fa fa-star"></i></label>
+          <input id="radio2" type="radio" name="estrellitas" value="4">
+          <label for="radio2"><i class="fa fa-star"></i></label>
+          <input id="radio3" type="radio" name="estrellitas"value="3">
+          <label for="radio3"><i class="fa fa-star"></i></label>
+          <input id="radio4" type="radio" name="estrellitas" value="2">
+          <label for="radio4"><i class="fa fa-star"></i></label>
+          <input id="radio5" type="radio" name="estrellitas" value="1">
+          <label for="radio5"><i class="fa fa-star"></i></label>
+        </div>
+        <button type="submit" class="btn btn-dark mb-2" id="enviarcomentario">Enviar</button>
+        
+  
+      </div>
+      <dt>Productos Relacionados</dt>
+      <dd>
+        <div class="row text-center text-lg-left pt-2" id="relatedProducts"></div>
+      </dd>
     </dl>
+    
     <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
   </div>
   </div>
