@@ -71,20 +71,21 @@
       
       <div class="form-group">
         <label for="nuevocomentario">Ingrese un comentario</label>
-        <textarea class="form-control" id="nuevocomentario" rows="6"></textarea>
+        <textarea class="form-control" id="nuevocomentario" rows="6"></textarea><br>
         <div class="rating">
-          <input id="radio1" type="radio" name="estrellitas" value="5">
+          <input id="radio1" type="radio" name="estrellitas" value="5" onclick="document.getElementById('puntajeElegido').innerHTML= '5'">
           <label for="radio1"><i class="fa fa-star"></i></label>
-          <input id="radio2" type="radio" name="estrellitas" value="4">
+          <input id="radio2" type="radio" name="estrellitas" value="4" onclick="document.getElementById('puntajeElegido').innerHTML= '4'">
           <label for="radio2"><i class="fa fa-star"></i></label>
-          <input id="radio3" type="radio" name="estrellitas"value="3">
+          <input id="radio3" type="radio" name="estrellitas"value="3" onclick="document.getElementById('puntajeElegido').innerHTML= '3'">
           <label for="radio3"><i class="fa fa-star"></i></label>
-          <input id="radio4" type="radio" name="estrellitas" value="2">
+          <input id="radio4" type="radio" name="estrellitas" value="2" onclick="document.getElementById('puntajeElegido').innerHTML= '2'">
           <label for="radio4"><i class="fa fa-star"></i></label>
-          <input id="radio5" type="radio" name="estrellitas" value="1">
+          <input id="radio5" type="radio" name="estrellitas" value="1" onclick="document.getElementById('puntajeElegido').innerHTML= '1'">
           <label for="radio5"><i class="fa fa-star"></i></label>
         </div>
-        <button type="submit" class="btn btn-dark mb-2" id="enviarcomentario">Enviar</button>
+        <span class="oculto" id="puntajeElegido"></span>
+        <button type="submit" class="btn btn-dark mb-2" id="enviarcomentario" onclick="enviarComentario()">Enviar</button>
         
   
       </div>

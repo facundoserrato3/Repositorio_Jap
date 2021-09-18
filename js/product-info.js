@@ -89,10 +89,16 @@ function estrellitas(puntaje) {
 
     
 function enviarComentario(){
-    var description= document.getElementById("nuevocomentario");
-    var name = JSON.parse(localStorage.usuario);
-    var date = new Date()
-    var score= document.getElementById()
+    nuevoComentario = {};
+    nuevoComentario.description= document.getElementById("nuevocomentario").value;
+    nuevoComentario.date = new Date();
+    nuevoComentario.score= document.getElementById("puntajeElegido").value;
+    nuevoComentario.name = JSON.parse(localStorage.getItem("usuario"));
+
+    comentario.push(nuevoComentario);
+    mostrarComentarios(comentario);
+    document.getElementById("nuevocomentario").value="";
+    document.getElementById("puntajeElegido").value="";
 }
 
 
@@ -160,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         if (resultObj.status = "ok") {
             comentario = resultObj.data;
             mostrarComentarios(comentario);
-            estrellas(comentario);
+            
             
             
             

@@ -1,3 +1,10 @@
+.rating input{
+    display: none;
+    position:absolute;
+}
+.rating{
+    width: 10%;
+}
 .rating label {
     float:right;
     
@@ -10,4 +17,7 @@
 {
 
     color:#ea0;
+}
+.oculto{
+    display:none;
 }
