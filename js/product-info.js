@@ -5,13 +5,15 @@ function mostrarImagenes(array) {
 
     for (let i=0; i<array.length; i++) {
         let imagen= array[i]
-       adjuntarcontenidoHtml += `
+       adjuntarcontenidoHtml += `<div class="carousel-item active" data-interval="2000" >
+       <img src="${imagen}" class="d-block w-100" alt="">
+     </div>` /*`
         <div class="col-lg-3 col-md-4 col-6">
             <div class="d-block mb-4 h-100">
                 <img class="img-fluid img-thumbnail" src=" ${imagen}" alt="">
             </div>
         </div>
-        `
+        `*/
         document.getElementById("productImagesGallery").innerHTML = adjuntarcontenidoHtml;
     }
 }
@@ -91,9 +93,18 @@ function estrellitas(puntaje) {
 function enviarComentario(){
     nuevoComentario = {};
     nuevoComentario.description= document.getElementById("nuevocomentario").value;
-    nuevoComentario.date = new Date();
+    fecha = new Date();
+    options={
+        year:"numeric", month:"numeric", day:"numeric", hour:"numeric", minute:"numeric", second:"numeric",
+        hour12: false,
+    }
+    
+    fechaActual= new Intl.DateTimeFormat("en-CA", options).format(fecha);
+    nuevoComentario.dateTime = fechaActual;
+    
     nuevoComentario.score= document.getElementById("puntajeElegido").value;
-    nuevoComentario.name = JSON.parse(localStorage.getItem("usuario"));
+    user =  JSON.parse(localStorage.usuario)
+    nuevoComentario.user = user.usuario;
 
     comentario.push(nuevoComentario);
     mostrarComentarios(comentario);

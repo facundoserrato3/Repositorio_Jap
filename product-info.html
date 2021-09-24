@@ -23,10 +23,19 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a class = "py-2 d-none d-md-inline-block" href= "#" id="nombre"></a>
-      <button class = "btn btn-dark col-1 btn-block" onclick="cerrarSesion()">Salir</button>
+      
+      <div class="dropdown">
+        <button class="btn btn-dark dropdown-toggle" type="button" id="nombre" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item btn btn-dark btn-block" href="cart.html"><i class="fa fa-shopping-cart"></i>Mi carrito</a>
+          <a class="dropdown-item btn btn-dark btn-block" href="my-profile.html"><i class="fa fa-user "></i>Mi Perfil</a>
+          <a class = "dropdown-item btn btn-dark btn-block" onclick="cerrarSesion()" id="closesesion">Cerrar Sesión</a>
+          
+        </div>
+      </div>
     </div>
+
   </nav>
   <div class="container p-5" >
     <div class="text-center p-4">
@@ -41,8 +50,22 @@
       
       <dt>Imágenes ilustrativas</dt>
       <dd>
-        <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
-        </div>
+        
+          <div id="carouselExampleInterval" class="carousel slide " data-ride="carousel">
+            <div class="carousel-inner" id="productImagesGallery">
+                      
+             
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        
       </dd>
       <dt>Descripción</dt>
       <dd>
@@ -73,18 +96,18 @@
         <label for="nuevocomentario">Ingrese un comentario</label>
         <textarea class="form-control" id="nuevocomentario" rows="6"></textarea><br>
         <div class="rating">
-          <input id="radio1" type="radio" name="estrellitas" value="5" onclick="document.getElementById('puntajeElegido').innerHTML= '5'">
+          <input id="radio1" type="radio" name="estrellitas" value="5" onclick="document.getElementById('puntajeElegido').value= radio1.value">
           <label for="radio1"><i class="fa fa-star"></i></label>
-          <input id="radio2" type="radio" name="estrellitas" value="4" onclick="document.getElementById('puntajeElegido').innerHTML= '4'">
+          <input id="radio2" type="radio" name="estrellitas" value="4" onclick="document.getElementById('puntajeElegido').value= radio2.value">
           <label for="radio2"><i class="fa fa-star"></i></label>
-          <input id="radio3" type="radio" name="estrellitas"value="3" onclick="document.getElementById('puntajeElegido').innerHTML= '3'">
+          <input id="radio3" type="radio" name="estrellitas"value="3" onclick="document.getElementById('puntajeElegido').value= radio3.value">
           <label for="radio3"><i class="fa fa-star"></i></label>
-          <input id="radio4" type="radio" name="estrellitas" value="2" onclick="document.getElementById('puntajeElegido').innerHTML= '2'">
+          <input id="radio4" type="radio" name="estrellitas" value="2" onclick="document.getElementById('puntajeElegido').value= radio4.value">
           <label for="radio4"><i class="fa fa-star"></i></label>
-          <input id="radio5" type="radio" name="estrellitas" value="1" onclick="document.getElementById('puntajeElegido').innerHTML= '1'">
+          <input id="radio5" type="radio" name="estrellitas" value="1" onclick="document.getElementById('puntajeElegido').value= radio5.value">
           <label for="radio5"><i class="fa fa-star"></i></label>
         </div>
-        <span class="oculto" id="puntajeElegido"></span>
+        <span class="oculto" id="puntajeElegido" value=""></span>
         <button type="submit" class="btn btn-dark mb-2" id="enviarcomentario" onclick="enviarComentario()">Enviar</button>
         
   
@@ -121,6 +144,7 @@
   <script src="js/product-info.js"></script>
   <script src="js/home.js"></script>
   <script src="js/redireccionar.js"></script>
+  <script src="js/login.js"></script>
 </body>
 
 </html>

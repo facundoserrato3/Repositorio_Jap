@@ -59,3 +59,5 @@ function guardarDatos() {
 document.addEventListener("DOMContentLoaded", function(e){
 
 });
+
+document.getElementById("closesesion").addEventListener("click", cerrarSesion());

@@ -15,7 +15,22 @@ function showProductsList() {
         
         if (((minCount == undefined) || (minCount != undefined && parseInt(product.cost) >= minCount)) &&
         ((maxCount == undefined) || (maxCount != undefined && parseInt(product.cost) <= maxCount))) {
-        adjuntarcontenidoHTML +=  `
+        adjuntarcontenidoHTML += 
+        `
+        <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="${product.imgSrc}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">${product.name}</h5>
+    <p class="card-text">${product.description}</p>
+    <p class="card-text">${product.currency} ${product.cost}</p>
+    <a href="product-info.html" class="btn btn-dark">Ver Producto</a>
+  
+</div>
+</div>
+</div>
+`
+/* `
         <a href="product-info.html" class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-3">
@@ -32,7 +47,7 @@ function showProductsList() {
                 </div>
             </div>
         </a>
-        `
+        `*/
         }
      }
      document.getElementById("prod-list-container").innerHTML = adjuntarcontenidoHTML;
