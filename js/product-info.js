@@ -5,9 +5,13 @@ function mostrarImagenes(array) {
 
     for (let i=0; i<array.length; i++) {
         let imagen= array[i]
-       adjuntarcontenidoHtml += `<div class="carousel-item active" data-interval="2000" >
+        if (i==0) {
+       adjuntarcontenidoHtml += `<div class="carousel-item active"  >
        <img src="${imagen}" class="d-block w-100" alt="">
-     </div>` /*`
+     </div>`}
+     else{adjuntarcontenidoHtml += `<div class="carousel-item"  >
+     <img src="${imagen}" class="d-block w-100" alt="">
+   </div>`} /*`
         <div class="col-lg-3 col-md-4 col-6">
             <div class="d-block mb-4 h-100">
                 <img class="img-fluid img-thumbnail" src=" ${imagen}" alt="">

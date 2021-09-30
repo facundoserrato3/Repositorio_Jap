@@ -21,3 +21,20 @@
 .oculto{
     display:none;
 }
+.carousel-inner img {
+    width: 100%;
+    
+}
+
+.carousel-inner{
+ height: 300px;
+}
+
+
+#carouselExampleInterval {
+    height: 300px;
+    width: 50%;
+    
+    
+
+}
