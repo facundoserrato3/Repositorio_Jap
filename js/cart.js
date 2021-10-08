@@ -1,80 +1,79 @@
 const CART_INFO2_URL ="https://japdevdep.github.io/ecommerce-api/cart/654.json"
 
-function cotizar(array){
-    carrito = array[i]
-    if(carrito.currency ==="USD") {
-        carrito.unitCost = carrito.unitCost / 40;
-        carrito.currency = "UYU"
-    }
+
     
+
+function borrar(){
+    carrito = micarrito.articles[i]
+    micarrito.splice(carrito);
+
 }
+function subtotal() {
+    let cantidad= document.getElementsByClassName("cant");
+        console.log(cantidad);
+
+}
+
+
 
 function mostrarCarrito(array){
     let contenidoparaadjuntar = "";
     let articulos = array.articles;
     let total=0
+    let subtotal= 0
+    let totalproductos = 0
     for (let i=0; i<articulos.length; i++){
         let carrito= articulos[i];
         
         if(carrito.currency ==="USD") {
             carrito.unitCost = carrito.unitCost * 40;
             carrito.currency = "UYU"
-        
+            
         contenidoparaadjuntar +=
         `<tr>
-        <td ><img src="${carrito.src}" class="col-3"</td>
+        <td ><img src="${carrito.src}" width="100"</td>
       <td>${carrito.name}</td>
-    <td>${carrito.count}</td>
-    <td>${carrito.currency} ${carrito.unitCost}</td>      </tr>`
+    <td><input class="form-control cant" type="number" min="1" value="${carrito.count}"></td>
     
-        
-        
-        
-        /* ` <div class="container"><div>${carrito.name}</div>
-        <div class="col-6">            
-            </div><h4 class="mb-1">  ${carrito.count}</h4>  <p>${carrito.unitCost}</p>
-            
-            
-        </div><br>
-        <div class="col-12">
-            <div class="d-flex w-100 justify-content-between">
-                <p class="mb-1">${carrito.currency}</p>
-                
-            </div>
-        </div>
-    </div><hr><br>`;
-    total += carrito.unitCost;*/
+    <td>${carrito.currency} ${carrito.unitCost}</td> 
+    <td>$ ${carrito.count * carrito.unitCost}</td>
+
+    <td><button class="btn btn-danger btn-block" onclick="borrar()">Borrar</button></td>     </tr>`
+    
+    
+    
         }
-        else { contenidoparaadjuntar += 
+        else {         
+            contenidoparaadjuntar += 
             `<tr>
             <td ><img src="${carrito.src}"class="col-3"></td>
           <td>${carrito.name}</td>
-        <td>${carrito.count}</td>
-        <td>${carrito.currency} ${carrito.unitCost}</td>      </tr>`
+        <td><input class="form-control cant" type="number" value="${carrito.count}" name="count"></td>
+        <td>${carrito.currency} ${carrito.unitCost}</td>
+        <td>$ ${carrito.count * carrito.unitCost}</td>
+     
+        <td><button class="btn btn-danger btn-block" onclick="borrar()">Borrar</button></td>     </tr>`
         
         
             
-            /*` <div class="container"><div>${carrito.name}</div>
-        <div class="col-6">            
-            </div><h4 class="mb-1">  ${carrito.count}</h4>  <p>${carrito.unitCost}</p>
-            
-            
-        </div><br>
-        <div class="col-12">
-            <div class="d-flex w-100 justify-content-between">
-                <p class="mb-1">${carrito.currency}</p>
-                
-            </div>
-        </div>
-    </div><hr><br>`
-    total += carrito.unitCost;*/
-
         }
-        total += parseInt(carrito.unitCost)
+        
+        
+        subtotal += carrito.count *carrito.unitCost;
+         
+  
+    
+        
+       
+        
+        totalproductos += parseInt(carrito.count);
 
     }
+    total += parseInt(subtotal);
     document.getElementById("carro").innerHTML = contenidoparaadjuntar;
-    document.getElementById("carrototal").innerHTML = total;
+    document.getElementById("carrototal").innerHTML = "$" + " " + total;
+    document.getElementById("carrosubtotal").innerHTML = "$" + " " + subtotal;
+    
 };
 
 

@@ -25,13 +25,25 @@ function productosRelacionados(array) {
     let contenidoparaadjuntar = "";
     for (let i=0; i < infoproducto.relatedProducts.length; i++) {
         let product = array[infoproducto.relatedProducts[i]];
-       contenidoparaadjuntar += `
+       contenidoparaadjuntar += /*`
         <div class="col-lg-3 col-md-4 col-6">
             <div class="d-block mb-4 h-100">
                 <img class="img-fluid img-thumbnail" src=" ${product.imgSrc}" alt="">
             </div>
         </div>
-        `
+        `*/
+        `<div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+                 <img class="card-img-top" src="${product.imgSrc}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">${product.name}</h5>
+    <p class="card-text">${product.description}</p>
+    <p class="card-text">${product.currency} ${product.cost}</p>
+    <a href="product-info.html" class="btn btn-dark">Ver Producto</a>
+  
+</div>
+</div>
+</div>`
         document.getElementById("relatedProducts").innerHTML = contenidoparaadjuntar;
     }
    
