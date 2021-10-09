@@ -1,16 +1,42 @@
 const CART_INFO2_URL ="https://japdevdep.github.io/ecommerce-api/cart/654.json"
 
-
+let micarrito=[]
     
 
 function borrar(){
-    carrito = micarrito.articles[i]
-    micarrito.splice(carrito);
+   let productos = document.getElementsByClassName("prod");
+   console.log(productos)
+   for(let i=0; i<productos.length; i++) {
+       let producto = productos[i]
+       nuevoCarrito = producto.remove()
+   }
+   mostrarCarrito(nuevoCarrito);
+   
 
 }
 function subtotal() {
-    let cantidad= document.getElementsByClassName("cant");
-        console.log(cantidad);
+    let cantidad= document.getElementsByTagName("input");
+    let precio = document.getElementsByClassName("precio");
+    let subt = document.getElementsByClassName("subt");
+    let subtotal = 0
+    let total = 0
+    let subt2 = 0
+    for (let i=0; i<precio.length; i++){
+        let precios = precio[i];
+        let cantidades= cantidad[i]
+       
+        let subts = subt[i]
+        subtotal += parseInt(precios.innerHTML) * parseInt(cantidades.value);
+        subt2 = parseInt(precios.innerHTML) * parseInt(cantidades.value);
+        
+        
+       subts.innerHTML = "$" + " " + subt2;
+        
+    }
+    total += parseInt(subtotal);
+    document.getElementById("carrosubtotal").innerHTML = "$" + " " + subtotal;
+    document.getElementById("carrototal").innerHTML = "$" + " " + total;
+        
 
 }
 
@@ -19,9 +45,10 @@ function subtotal() {
 function mostrarCarrito(array){
     let contenidoparaadjuntar = "";
     let articulos = array.articles;
-    let total=0
-    let subtotal= 0
-    let totalproductos = 0
+    let total=0;
+    let subtotal= 0;
+    let totalproductos = 0;
+    
     for (let i=0; i<articulos.length; i++){
         let carrito= articulos[i];
         
@@ -30,13 +57,13 @@ function mostrarCarrito(array){
             carrito.currency = "UYU"
             
         contenidoparaadjuntar +=
-        `<tr>
-        <td ><img src="${carrito.src}" width="100"</td>
+        `<tr class="prod">
+        <td ><img src="${carrito.src}" width="100" </td>
       <td>${carrito.name}</td>
-    <td><input class="form-control cant" type="number" min="1" value="${carrito.count}"></td>
+    <td><input class="form-control cant" type="number" min="1" id="cant${i}" value="${carrito.count}" onchange="subtotal()" ></td>
     
-    <td>${carrito.currency} ${carrito.unitCost}</td> 
-    <td>$ ${carrito.count * carrito.unitCost}</td>
+    <td >$ <span class="precio">${carrito.unitCost}</span></td> 
+    <td class="subt">$ ${carrito.count * carrito.unitCost}</td>
 
     <td><button class="btn btn-danger btn-block" onclick="borrar()">Borrar</button></td>     </tr>`
     
@@ -45,12 +72,12 @@ function mostrarCarrito(array){
         }
         else {         
             contenidoparaadjuntar += 
-            `<tr>
-            <td ><img src="${carrito.src}"class="col-3"></td>
+            `<tr class="prod">
+            <td ><img src="${carrito.src}" width="100"></td>
           <td>${carrito.name}</td>
-        <td><input class="form-control cant" type="number" value="${carrito.count}" name="count"></td>
-        <td>${carrito.currency} ${carrito.unitCost}</td>
-        <td>$ ${carrito.count * carrito.unitCost}</td>
+        <td><input class="form-control cant" type="number" value="${carrito.count}" id="cant${i}" onchange="subtotal()" min="1"></td>
+        <td >$ <span class="precio">${carrito.unitCost}</span></td> 
+        <td class="subt">$ ${carrito.count * carrito.unitCost}</td>
      
         <td><button class="btn btn-danger btn-block" onclick="borrar()">Borrar</button></td>     </tr>`
         
@@ -61,14 +88,13 @@ function mostrarCarrito(array){
         
         subtotal += carrito.count *carrito.unitCost;
          
-  
+  totalproductos += parseInt(carrito.count)
     
         
        
-        
-        totalproductos += parseInt(carrito.count);
 
     }
+    document.getElementById("badge").innerHTML = totalproductos;
     total += parseInt(subtotal);
     document.getElementById("carro").innerHTML = contenidoparaadjuntar;
     document.getElementById("carrototal").innerHTML = "$" + " " + total;

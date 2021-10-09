@@ -39,12 +39,12 @@
       <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html"><i class="fa fa-cash-register"></i>Vender</a>
+      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
         <div class="dropdown">
         <button class="btn btn-dark dropdown-toggle" type="button" id="nombre" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item btn btn-dark btn-block" href="cart.html"><i class="fa fa-shopping-cart"></i>Mi carrito</a>
+                    <a class="dropdown-item btn btn-dark btn-block" href="cart.html"><i class="fa fa-shopping-cart"></i>Mi carrito<span id="badge" class="badge badge-secondary"></span></a>
           <a class="dropdown-item btn btn-dark btn-block" href="my-profile.html"><i class="fa fa-user"></i>Mi Perfil</a>
           <a class = "dropdown-item btn btn-dark btn-block" onclick="cerrarSesion()" id="closesesion">Cerrar Sesión</a>
           
@@ -58,7 +58,7 @@
       <h2>Mi Carrito</h2>
       
     </div>
-  <div class="container p-5">
+  <div class="container p-5 ">
     <table class="table">
       <thead>
         <tr>
@@ -77,18 +77,63 @@
         <tr>
           <th colspan ="5">Subtotal: <div id="carrosubtotal"></div></th>
         </tr>
-        <tr>
-
-        
-     
-          <th colspan ="5" >Total: <div id="carrototal"></div></th>
-          
-        </tr>
-        <tr>     <th colspan="5"><div class="float-right"><button class="btn btn-success btn-block">Pagar</button></div></th
+      
+        <tr>     <th colspan="5"><div class="float-right"><button class="btn btn-success btn-block" data-toggle="modal" data-target="#staticBackdrop">Pagar</button></div></th
           ></tr>
       </tfoot>
       
     </table>
+    
+   
+    
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Finalize su compra</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h6>Seleccione metodo de envío</h6>
+            
+           
+            <input required type="radio" id="normal" name="envio">
+            <label for="normal">Envío normal <i class="fas fa-truck"></i></label><br>
+            <input required type="radio" id="express" name="envio">
+            <label for="express">Envío express <i class="fas fa-shipping-fast"></i></label><br>
+            <input required type="radio" id="premium" name="envio">
+            <label for="premium">Envio premium <i class="fas fa-shipping-fast"></i><i class="fas fa-shipping-fast"></i></label>
+            <hr>
+            <h6>Ingrese su dirección</h6>
+            <label for="calle"><i class="fas fa-road"></i></label>
+            <input required type="text" id="calle" placeholder="Calle"><br>
+            <label for="numero"><i class="fas fa-home"></i></label>
+            <input required type="text" id="numero" placeholder="Número de puerta"><br>
+            <label for="ciudad"><i class="fas fa-city"></i></label>
+            <input required type="text" id="ciudad" placeholder="Ciudad">
+            <hr>
+            <h6>Método de pago</h6>
+            <input type="radio" name="pago">
+            <input type="radio" name="pago">
+            <input type="radio" name="pago">
+            
+<hr>
+        
+     
+             <p> Total: <div id="carrototal"></div></p>
+              
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-dark" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-success ">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </main>
   <div id="spinner-wrapper">
