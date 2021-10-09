@@ -31,6 +31,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
+  <link rel="stylesheet" href="modal.css">
 </head>
 
 <body>
@@ -99,26 +100,32 @@
           <div class="modal-body">
             <h6>Seleccione metodo de envío</h6>
             
-           
+           <div class="envios">
             <input required type="radio" id="normal" name="envio">
             <label for="normal">Envío normal <i class="fas fa-truck"></i></label><br>
             <input required type="radio" id="express" name="envio">
             <label for="express">Envío express <i class="fas fa-shipping-fast"></i></label><br>
             <input required type="radio" id="premium" name="envio">
             <label for="premium">Envio premium <i class="fas fa-shipping-fast"></i><i class="fas fa-shipping-fast"></i></label>
+            </div>
             <hr>
+
             <h6>Ingrese su dirección</h6>
-            <label for="calle"><i class="fas fa-road"></i></label>
+            <div class="direccion"><label for="calle"><i class="fas fa-road"></i></label>
             <input required type="text" id="calle" placeholder="Calle"><br>
             <label for="numero"><i class="fas fa-home"></i></label>
             <input required type="text" id="numero" placeholder="Número de puerta"><br>
             <label for="ciudad"><i class="fas fa-city"></i></label>
             <input required type="text" id="ciudad" placeholder="Ciudad">
-            <hr>
+            </div><hr>
             <h6>Método de pago</h6>
-            <input type="radio" name="pago">
-            <input type="radio" name="pago">
-            <input type="radio" name="pago">
+            <div class="pago"><label for="btc"><i class="fab fa-btc"></i></label>
+            <input type="radio" name="pago" id="btc">
+            <label for="credit"><i class="far fa-credit-card"></i></label>
+            <input type="radio" name="pago" id="credit">
+            <label for="paypal"><i class="fab fa-cc-paypal"></i></label>
+            <input type="radio" name="pago" id="paypal">
+            </div>
             
 <hr>
         
