@@ -1,0 +1,17 @@
+.envios input,
+.pagos input{
+    display: none;
+    position:absolute;
+}
+.envios input:checked + label
+
+{ 
+ 
+    color:#5cb85c;
+}
+.pagos input:checked + label
+{ 
+ 
+    color:#5cb85c;
+}
+

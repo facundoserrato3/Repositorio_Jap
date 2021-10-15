@@ -31,7 +31,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
-  <link rel="stylesheet" href="modal.css">
+  <link rel="stylesheet" href="css/modal.css">
 </head>
 
 <body>
@@ -76,7 +76,7 @@
       <tbody id="carro"></tbody>
       <tfoot style="text-align: right;">
         <tr>
-          <th colspan ="5">Subtotal: <div id="carrosubtotal"></div></th>
+          <th colspan ="5">Subtotal: $ <span id="carrosubtotal"></span></th>
         </tr>
       
         <tr>     <th colspan="5"><div class="float-right"><button class="btn btn-success btn-block" data-toggle="modal" data-target="#staticBackdrop">Pagar</button></div></th
@@ -101,36 +101,36 @@
             <h6>Seleccione metodo de envío</h6>
             
            <div class="envios">
-            <input required type="radio" id="normal" name="envio">
-            <label for="normal">Envío normal <i class="fas fa-truck"></i></label><br>
-            <input required type="radio" id="express" name="envio">
-            <label for="express">Envío express <i class="fas fa-shipping-fast"></i></label><br>
-            <input required type="radio" id="premium" name="envio">
-            <label for="premium">Envio premium <i class="fas fa-shipping-fast"></i><i class="fas fa-shipping-fast"></i></label>
+            <input required type="radio" id="normal" name="envio" onclick="tipoDeEnvio(5)">
+            <label for="normal"><i class="fas fa-truck"></i>Envío normal (12-15 días) - Costo del 5% sobre el total </label><br>
+            <input required type="radio" id="express" name="envio" onclick="tipoDeEnvio(7)">
+            <label for="express"><i class="fas fa-shipping-fast"></i>Envío express (5-8 días) - Costo del 7% sobre el total </label><br>
+            <input required type="radio" id="premium" name="envio" onclick="tipoDeEnvio(12)">
+            <label for="premium"><i class="fas fa-shipping-fast"></i><i class="fas fa-shipping-fast"></i>Envio premium (2-5 días) - Costo del 15% sobre el total</i></label>
             </div>
             <hr>
 
             <h6>Ingrese su dirección</h6>
-            <div class="direccion"><label for="calle"><i class="fas fa-road"></i></label>
-            <input required type="text" id="calle" placeholder="Calle"><br>
-            <label for="numero"><i class="fas fa-home"></i></label>
-            <input required type="text" id="numero" placeholder="Número de puerta"><br>
-            <label for="ciudad"><i class="fas fa-city"></i></label>
-            <input required type="text" id="ciudad" placeholder="Ciudad">
+            <div class="direccion"><div class="input-container"><label for="calle"><i class="fas fa-road "></i></label>
+            <input required type="text" id="calle" placeholder="Calle" class="input-field"></div><br>
+            <div class="input-container"><label for="numero"><i class="fas fa-home "></i></label>
+            <input required type="text" id="numero" placeholder="Número de puerta"class="input-field"></div><br>
+            <div class="input-container"><label for="ciudad"><i class="fas fa-city "></i></label>
+            <input required type="text" id="ciudad" placeholder="Localidad"class="input-field"></div>
             </div><hr>
             <h6>Método de pago</h6>
-            <div class="pago"><label for="btc"><i class="fab fa-btc"></i></label>
-            <input type="radio" name="pago" id="btc">
-            <label for="credit"><i class="far fa-credit-card"></i></label>
+            <div class="pagos">
             <input type="radio" name="pago" id="credit">
-            <label for="paypal"><i class="fab fa-cc-paypal"></i></label>
+            <label for="credit"><i class="far fa-credit-card"></i> Tarjeta de Crédito</label><br>
             <input type="radio" name="pago" id="paypal">
+            <label for="paypal"><i class="fas fa-landmark"></i>Depósito bancario</label>
             </div>
             
 <hr>
-        
+        <p>Subtotal: $ <span id ="subtotal-modal"></span></p>
      
-             <p> Total: <div id="carrototal"></div></p>
+             <p> Total:
+                $ <span id="carrototal"></span></p>
               
             
           </div>
