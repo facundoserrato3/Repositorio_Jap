@@ -53,14 +53,51 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <div class="text-center p-4">
+    <h2>Mi Perfil</h2>
+    
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 my-3 pt-3">
+      <h4>Nombres: <span id="nombres"> </span></h4> <br>
+      <h4>Apellidos: <span id="apellidos"> </span></h4> <br>
+      <h4>Edad: <span id="edad"></span></h4> <br>
+      <h4>Teléfono de contacto: <span id="telefono"> </span></h4>
+      
+      
+</div>    
+</div>
+  </div>
+<div class="d-flex justify-content-center"> <div  class="col-3 p-4"><button class="btn btn-dark btn-block " data-toggle="modal" data-target="#exampleModal">Cambiar datos</button>
+</div></div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ingrese los nuevos datos</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="input-container"><label for="nuevonombre">Ingrese sus nombres</label>
+          <input required type="text" id="nuevonombre"></div><br>
+          <div class="input-container"><label for="nuevoapellido">Ingrese sus apellidos</label>
+          <input required type="text" id="nuevoapellido"></div><br>
+          <div class="input-container"><label for="nuevaedad">Ingrese su edad</label>
+          <input required type="text" id="nuevaedad"></div><br>
+          <div class="input-container"><label for="nuevotelefono">Ingrese su teléfono</label>
+            <input required type="text" id="nuevotelefono"></div>
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" onclick="guardarDatosPerfil()">Guardar Datos</button>
+      </div>
     </div>
   </div>
+</div>
   <footer class="text-muted bg-light">
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
