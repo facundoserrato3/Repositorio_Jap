@@ -32,6 +32,7 @@
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/perfil.css">
 </head>
 
 <body>
@@ -54,15 +55,70 @@
     </div>
   </nav>
   <div class="text-center p-4">
-    <h2>Mi Perfil</h2>
-    
+    <h2>Mi Perfil</h2><br>
+    <img id="fotoperfil" src="" alt="Imagen de perfil" class="rounded-circle" width="200"><br>
+    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal2"><i class="fas fa-pencil-alt" ></i></button>
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Cambiar imágen</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input type="file" onchange="cambiarImagen()">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-dark" onclick="guardarDatosPerfil()">Guardar Cambios</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="container">
+
+<!--nuevo-->
+<div class="formulario">
+  <form action="" class="justify-content-center">
+    
+      <div class="row">
+        <div class="col-sm-6">
+        <label class="labels-form" for="nombres">Nombre:</label>
+    <input type="text" id="nombres" class="form-control" value="" onchange="guardarDatosPerfil()">
+    </div>
+    <div class="col-sm-6">
+    <label class="labels-form" for="apellidos">Apellidos:</label>
+    <input type="text" id="apellidos" class="form-control" value="" onchange="guardarDatosPerfil()">
+</div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">
+    <label class="labels-form" for="edad">Edad:</label>
+    <input type="number" min="1" max="100" id="edad" class="form-control" value="" onchange="guardarDatosPerfil()">
+    </div>
+    <div class="col-sm-6">
+    <label class="labels-form" for="email">Email:</label>
+    <input type="text" id="email" class="form-control" value="" onchange="guardarDatosPerfil()">
+    </div>
+    <div class="col-sm-4">
+    <label class="labels-form" for="telefono">Teléfono:</label>
+    <input type="text" id="telefono" class="form-control" value="" onchange="guardarDatosPerfil()">
+  </div>
+  </div>
+  </form>
+
+</div>
+<!--Finnuevo-->
+
+ <!--<div class="container">
     <div class="row">
       <div class="col-12 my-3 pt-3">
       <h4>Nombres: <span id="nombres"> </span></h4> <br>
       <h4>Apellidos: <span id="apellidos"> </span></h4> <br>
       <h4>Edad: <span id="edad"></span></h4> <br>
+      <h4>Email: <span id="email"></span></h4> <br>
       <h4>Teléfono de contacto: <span id="telefono"> </span></h4>
       
       
@@ -81,23 +137,27 @@
         </button>
       </div>
       <div class="modal-body">
+       <form action="" id="datos">
         <div class="input-container"><label for="nuevonombre">Ingrese sus nombres</label>
           <input required type="text" id="nuevonombre"></div><br>
           <div class="input-container"><label for="nuevoapellido">Ingrese sus apellidos</label>
           <input required type="text" id="nuevoapellido"></div><br>
           <div class="input-container"><label for="nuevaedad">Ingrese su edad</label>
           <input required type="text" id="nuevaedad"></div><br>
+          <div class="input-container"><label for="nuevoemail">Ingrese su email</label>
+            <input required type="text" id="nuevoemail"></div><br>
           <div class="input-container"><label for="nuevotelefono">Ingrese su teléfono</label>
             <input required type="text" id="nuevotelefono"></div>
           
       </div>
+      </form>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="limpiarFormulario()">Cerrar</button>
         <button type="button" class="btn btn-primary" onclick="guardarDatosPerfil()">Guardar Datos</button>
       </div>
     </div>
   </div>
-</div>
+</div>-->
   <footer class="text-muted bg-light">
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>

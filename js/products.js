@@ -18,7 +18,7 @@ function showProductsList() {
         adjuntarcontenidoHTML += 
         `
         <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
+        <div class="card mb-4 shadow-sm custom-card" ">
                  <img class="card-img-top" src="${product.imgSrc}" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">${product.name}</h5>

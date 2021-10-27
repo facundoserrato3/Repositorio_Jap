@@ -1,0 +1,23 @@
+.labels-form {
+    color: #4d5178;
+    font-size: 30px;
+
+}
+
+.form-control{
+    border: 0;
+    font-size: 20px;
+}
+
+.form-control:hover {
+    background-color: rgba(157, 160, 180, 0.3)
+} 
+
+.formulario {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.row {
+    margin-bottom: 20px;
+}
