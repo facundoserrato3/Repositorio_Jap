@@ -139,3 +139,7 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+.nav-item { font-size: larger; color: #fff; }
+
+.nav-item:hover { color: #fff;}

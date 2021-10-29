@@ -33,10 +33,39 @@
   <link href="css/dropzone.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/perfil.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
+  <nav class="navbar bg-dark navbar-expand-sm sticky-top py-1">
+    <div class="container">
+      <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon navbar-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div  class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="nav-item nav-link py-2 d-md-inline-block" href="home.html">Inicio</a>
+        <a class="nav-item nav-link py-2 d-md-inline-block " href="categories.html">Categorías</a>
+        <a class="nav-item nav-link py-2 d-md-inline-block " href="products.html">Productos</a>
+        <a class="nav-item nav-link py-2 d-md-inline-block " href="sell.html">Vender</a>
+                
+      </div>
+      </div>
+      <div class="dropdown">
+        <button class="btn btn-dark dropdown-toggle" type="button" id="nombre" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item btn btn-dark btn-block" href="cart.html"><i class="fa fa-shopping-cart"></i>Mi carrito<span id="badge" class="badge badge-secondary"></span></a>
+          <a class="dropdown-item btn btn-dark btn-block" href="my-profile.html"><i class="fa fa-user"></i>Mi Perfil</a>
+          <a class = "dropdown-item btn btn-dark btn-block" onclick="cerrarSesion()" id="closesesion">Cerrar Sesión</a>
+          
+        </div>
+      </div>
+    </div>
+    </nav>
+  <!--<nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
@@ -53,11 +82,11 @@
         </div>
       </div>
     </div>
-  </nav>
+  </nav>-->
   <div class="text-center p-4">
     <h2>Mi Perfil</h2><br>
-    <img id="fotoperfil" src="" alt="Imagen de perfil" class="rounded-circle" width="200"><br>
-    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal2"><i class="fas fa-pencil-alt" ></i></button>
+<div class="contenedor-imagen"><img id="fotoperfil" src="" alt="Imagen de perfil" class="rounded-circle" width="200"><br>
+    <button id="botonimagen" type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal2"><i class="fas fa-pencil-alt" ></i></button></div>
     <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -86,28 +115,30 @@
       <div class="row">
         <div class="col-sm-6">
         <label class="labels-form" for="nombres">Nombre:</label>
-    <input type="text" id="nombres" class="form-control" value="" onchange="guardarDatosPerfil()">
+    <input type="text" id="nombres" class="form-control" value="" >
     </div>
     <div class="col-sm-6">
     <label class="labels-form" for="apellidos">Apellidos:</label>
-    <input type="text" id="apellidos" class="form-control" value="" onchange="guardarDatosPerfil()">
+    <input type="text" id="apellidos" class="form-control" value="" >
 </div>
   </div>
   <div class="row">
     <div class="col-sm-2">
-    <label class="labels-form" for="edad">Edad:</label>
-    <input type="number" min="1" max="100" id="edad" class="form-control" value="" onchange="guardarDatosPerfil()">
+      <label class="labels-form" for="edad">Edad:</label>
+      <input type="number" min="1" max="100" id="edad" class="form-control" value="" >
     </div>
     <div class="col-sm-6">
-    <label class="labels-form" for="email">Email:</label>
-    <input type="text" id="email" class="form-control" value="" onchange="guardarDatosPerfil()">
+      <label class="labels-form" for="email">Email:</label>
+      <input type="text" id="email" class="form-control" value="" >
     </div>
     <div class="col-sm-4">
-    <label class="labels-form" for="telefono">Teléfono:</label>
-    <input type="text" id="telefono" class="form-control" value="" onchange="guardarDatosPerfil()">
+      <label class="labels-form" for="telefono">Teléfono:</label>
+      <input type="text" id="telefono" class="form-control" value="" >
   </div>
   </div>
   </form>
+  <div class="row" id="contenedor-boton-guardar"> <div  class="col-sm-3 "><button class="btn btn-dark btn-block " onclick="guardarDatosPerfil()">Guardar datos</button>
+  </div></div>
 
 </div>
 <!--Finnuevo-->
@@ -186,6 +217,7 @@
   <script src="js/redireccionar.js"></script>
   <script src="js/login.js"></script>
   <script src="js/home.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

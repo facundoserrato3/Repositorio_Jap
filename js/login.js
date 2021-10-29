@@ -52,19 +52,26 @@ function login(){
 
 
 
-function guardarDatos() {
+/*function guardarDatos() {
     var usuarioingresado = document.getElementById("correo-electronico");
     localStorage.setItem("usuario", JSON.stringify({usuario: usuarioingresado.value}))
+}*/
+function añadirUsuario(){
+    let usuario = JSON.parse(localStorage.getItem("usuario"));
+    let usuariosregistrados = [];
+usuariosregistrados.push(usuario);
 }
 
-/*function guardarDatos(){
+function guardarDatos(){
     let nombreusuario = document.getElementById("nombre-registrado").value;
-    let password= document.getElementById("contraseña-ingresada");
+    let password= document.getElementById("contraseña-registrada");
     let passwordcodificado = md5(password.value);
 
     localStorage.setItem("usuario", JSON.stringify({usuario: nombreusuario, password: passwordcodificado}));
-alert("se registro")
-}*/
+ añadirUsuario();
+}
+
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.

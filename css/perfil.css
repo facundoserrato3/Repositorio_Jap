@@ -7,6 +7,7 @@
 .form-control{
     border: 0;
     font-size: 20px;
+    
 }
 
 .form-control:hover {
@@ -21,3 +22,23 @@
 .row {
     margin-bottom: 20px;
 }
+
+#botonimagen {
+    width: 80px;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    
+}
+#contenedor-boton-guardar {
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-imagen {
+    display: block;
+}
+/*.contenedor-imagen:hover #botonimagen{
+    display: inline-block;
+}*/

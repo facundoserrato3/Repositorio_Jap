@@ -70,7 +70,13 @@ function guardarDatosPerfil() {
     let nuevaImagen = document.getElementById("fotoperfil")
     
     localStorage.setItem("datosperfil", JSON.stringify({nombres: nuevoNombre.value, apellidos: nuevoApellido.value, edad: nuevaEdad.value, email: nuevoEmail.value, telefono: nuevoTelefono.value, imagen: nuevaImagen.src}));
-
+    Swal.fire({
+     title:'Bien!',
+        text:'Los cambios han sido guardados.',
+        icon:'success',
+        confirmButtonColor: 'success',
+        confirmButtonText: 'Cerrar'
+    })
 }
 
 function limpiarFormulario() {
@@ -84,6 +90,6 @@ function limpiarFormulario() {
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
     mostrarDatos();
-mostrarInputs();
+
 
 });
