@@ -52,11 +52,11 @@ function login(){
 
 
 
-/*function guardarDatos() {
+function guardarDatos() {
     var usuarioingresado = document.getElementById("correo-electronico");
-    localStorage.setItem("usuario", JSON.stringify({usuario: usuarioingresado.value}))
-}*/
-function añadirUsuario(){
+    localStorage.setItem("usuario", JSON.stringify({usuario: usuarioingresado.value}))}
+
+/*function añadirUsuario(){
     let usuario = JSON.parse(localStorage.getItem("usuario"));
     let usuariosregistrados = [];
 usuariosregistrados.push(usuario);
@@ -69,7 +69,7 @@ function guardarDatos(){
 
     localStorage.setItem("usuario", JSON.stringify({usuario: nombreusuario, password: passwordcodificado}));
  añadirUsuario();
-}
+}*/
 
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
@@ -78,5 +78,3 @@ function guardarDatos(){
 document.addEventListener("DOMContentLoaded", function(e){
 
 });
-
-//document.getElementById("closesesion").addEventListener("click", cerrarSesion());
