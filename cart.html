@@ -8,10 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <title>eMercado - Todo lo que busques está aquí</title>
-
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
+  
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -32,6 +33,7 @@
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
   <link rel="stylesheet" href="css/modal.css">
+  <!--<link rel="stylesheet" href="css/form-pago.css">-->
 </head>
 
 <body>
@@ -124,46 +126,111 @@
             </button>
           </div>
           <div class="modal-body">
-            <h6>Seleccione metodo de envío</h6>
+            <h4>Seleccione metodo de envío</h4>
             
            <div class="envios">
+            <div class="row">
+              <div class="label-groups">
             <input required type="radio" id="normal" name="envio" onclick="tipoDeEnvio(5)">
             <label for="normal"><i class="fas fa-truck"></i>Envío normal (12-15 días) - Costo del 5% sobre el total </label><br>
-            <input required type="radio" id="express" name="envio" onclick="tipoDeEnvio(7)">
-            <label for="express"><i class="fas fa-shipping-fast"></i>Envío express (5-8 días) - Costo del 7% sobre el total </label><br>
-            <input required type="radio" id="premium" name="envio" onclick="tipoDeEnvio(12)">
-            <label for="premium"><i class="fas fa-shipping-fast"></i><i class="fas fa-shipping-fast"></i>Envio premium (2-5 días) - Costo del 15% sobre el total</i></label>
             </div>
+             </div>
+           <div class="row">
+             <div class="label-groups">
+              <input required type="radio" id="express" name="envio" onclick="tipoDeEnvio(7)">
+            <label for="express"><i class="fas fa-shipping-fast"></i>Envío express (5-8 días) - Costo del 7% sobre el total </label><br>
+           </div></div>
+           <div class="row">
+             <div class="label-groups">
+            <input required type="radio" id="premium" name="envio" onclick="tipoDeEnvio(12)">
+            <label for="premium"><i class="fas fa-shipping-fast"></i><i class="fas fa-shipping-fast"></i>Envio premium (2-5 días) - Costo del 12% sobre el total</i></label>
+           </div></div>
+          </div>
             <hr>
 
-            <h6>Ingrese su dirección</h6>
-            <div class="direccion"><div class="input-container"><label for="calle"><i class="fas fa-road "></i></label>
-            <input required type="text" id="calle" placeholder="Calle" class="input-field"></div><br>
-            <div class="input-container"><label for="numero"><i class="fas fa-home "></i></label>
-            <input required type="text" id="numero" placeholder="Número de puerta"class="input-field"></div><br>
-            <div class="input-container"><label for="ciudad"><i class="fas fa-city "></i></label>
-            <input required type="text" id="ciudad" placeholder="Localidad"class="input-field"></div>
-            </div><hr>
-            <h6>Método de pago</h6>
-            <div class="pagos">
-            <input type="radio" name="pago" id="credit">
-            <label for="credit"><i class="far fa-credit-card"></i> Tarjeta de Crédito</label><br>
-            <input type="radio" name="pago" id="paypal">
-            <label for="paypal"><i class="fas fa-landmark"></i>Depósito bancario</label>
+            <h4>Ingrese su dirección</h4>
+            <div class="direccion">
+             <div class="row"> <div class="form-group label-groups col-sm-6">
+                <label for="calle"><i class="fas fa-road "></i></label>
+            <input required type="text" id="calle" placeholder="Calle" class="form-control">
+          </div><br>
+            <div class="form-group label-groups col-sm-5">
+              <label for="numero"><i class="fas fa-home "></i></label>
+            <input required type="number" id="numero" min="1" placeholder="Número de puerta"class="form-control">
+          </div></div><br>
+           <div class="row"> <div class="form-group label-groups col-sm-8">
+              <label for="ciudad"><i class="fas fa-city "></i></label>
+            <input required type="text" id="ciudad" placeholder="Localidad"class="form-control">
+          </div>
+          </div>
             </div>
             
-<hr>
+            
+            <hr>
+            <h4>Método de pago</h4>
+            <div class="pagos">   <div class="col-sm-12">
+              <div class="label-group">
+              <label for="creditcard" ><i class="fas fa-credit-card"></i>Tarjeta de crédito</label>
+              <input type="radio" name="paytype" id="creditcard" class="radiobutton1">
+              </div>
+              <div class="form-container">
+       <form action="" class="form-display-none needs-validation"  id="credit-card-form">
+          <div class="row">
+              <div class="form-group col-sm-6">
+              <label for="username">Nombre</label>
+           <input type="text" class="form-control " id="username" placeholder="Nombre del titular" value="" required>
+          </div>
+          <div class="form-group col-sm-6">
+              <label for="creditcard-number">Número de tarjeta</label>
+           <input type="number" class="form-control" id="creditcard-number" placeholder="Numero de su tarjeta" value="" required>
+          </div>
+          </div>
+          <div class="row">
+          <div class="form-group col-sm-4">
+              <label for="creditcard-code">CCV</label>
+           <input type="number" class="form-control" name="" id="creditcard-code" placeholder="CVV" value="" required>
+          </div>
+          <div class="form-group col-sm-8">
+              <label for="creditcard-expire">Vencimiento de la tarjeta</label>
+           <input type="text" class="form-control" id="creditcard-expire" placeholder="Vencimiento MM/AA" value="" required>
+           
+          </div>
+          </div>
+
+       </form>
+       </div>
+       <div>
+           <div class="label-group">
+          <label for="bankdeposit"><i class="fas fa-money-bill-wave"></i>Depósito bancario</label>
+          <input type="radio"  name="paytype" id="bankdeposit" class="radiobutton2">
+          </div>
+          <div>
+              <form action="" class="form-display-none needs-validation" id="bank-form">
+                  <input type="text" class="form-control" id="account" placeholder="Ingrese su numero de cuenta">
+              </form>
+          </div>
+       </div>
+      
+      </div>
+      </div>
+      <hr>
         <p>Subtotal: $ <span id ="subtotal-modal"></span></p>
+        <p>Costo de envio: $ <span id="porcentaje-envio"></span></p>
      
              <p> Total:
                 $ <span id="carrototal"></span></p>
               
             
           </div>
+        
           <div class="modal-footer">
-            <button type="button" class="btn btn-dark" data-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-success ">Aceptar</button>
+            <button type="submit" class="btn btn-success" id="pay-validation" >Pagar</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+            
           </div>
+            </div>
+            
+
         </div>
       </div>
     </div>
@@ -177,6 +244,7 @@
       <div></div>
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
@@ -185,6 +253,7 @@
   <script src="js/home.js"></script>
   <script src="js/redireccionar.js"></script>
   <script src="js/login.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

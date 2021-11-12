@@ -1,16 +1,3 @@
-.envios input{
-    display: none;
-    position:absolute;
-}
-.envios input:checked + label
-
-{ 
- 
-    color:midnightblue;
-}
-.direccion {
-    margin-top: 20px;
-}
 .radiobutton1,
 .radiobutton2 {
     display: none;
@@ -26,7 +13,7 @@ position: absolute;
 .label-group {
     text-align: center;
     margin: 20px;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .label-group i {
@@ -35,13 +22,4 @@ position: absolute;
 }
 .form-control {
     margin-bottom: 10px;
-}
-
-.label-groups {
-    margin: 5px;
-    font-size: 20px;
-}
-.label-groups i {
-    color: midnightblue;
-    margin: 5px;
 }
