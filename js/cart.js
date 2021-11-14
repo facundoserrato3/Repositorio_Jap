@@ -164,7 +164,7 @@ document.getElementById("pay-validation").addEventListener("click", function (e)
        let creditform = document.getElementById("credit-card-form");
        let clase = creditform.getAttribute("class");
        let bankform= document.getElementById("bank-form");
-       if(clase === "form-display-none needs-validation" || clase ==="needs-validation form-display-none"){
+       if(clase === "form-display-none was-validated" || clase ==="was-validated form-display-none"){
        creditform.classList.remove("form-display-none");
        bankform.classList.remove("form-display-block")
        bankform.classList.add("form-display-none")
@@ -179,7 +179,7 @@ document.getElementById("pay-validation").addEventListener("click", function (e)
        let creditform = document.getElementById("credit-card-form");
        let bankform= document.getElementById("bank-form");
    let clase=bankform.getAttribute("class");
-       if(clase === "form-display-none needs-validation" || clase ==="needs-validation form-display-none"){
+       if(clase === "form-display-none was-validated" || clase ==="was-validated form-display-none"){
        creditform.classList.remove("form-display-block");
        creditform.classList.add("form-display-none");
        bankform.classList.remove("form-display-none");

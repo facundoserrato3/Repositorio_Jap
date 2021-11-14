@@ -150,6 +150,8 @@
 
             <h4>Ingrese su dirección</h4>
             <div class="direccion">
+              <form class="was-validated">
+    
              <div class="row"> <div class="form-group label-groups col-sm-6">
                 <label for="calle"><i class="fas fa-road "></i></label>
             <input required type="text" id="calle" placeholder="Calle" class="form-control">
@@ -163,6 +165,7 @@
             <input required type="text" id="ciudad" placeholder="Localidad"class="form-control">
           </div>
           </div>
+          </form>
             </div>
             
             
@@ -174,7 +177,7 @@
               <input type="radio" name="paytype" id="creditcard" class="radiobutton1">
               </div>
               <div class="form-container">
-       <form action="" class="form-display-none needs-validation"  id="credit-card-form">
+       <form action="" class="form-display-none was-validated"  id="credit-card-form">
           <div class="row">
               <div class="form-group col-sm-6">
               <label for="username">Nombre</label>
@@ -205,7 +208,7 @@
           <input type="radio"  name="paytype" id="bankdeposit" class="radiobutton2">
           </div>
           <div>
-              <form action="" class="form-display-none needs-validation" id="bank-form">
+              <form action="" class="form-display-none was-validated" id="bank-form">
                   <input type="text" class="form-control" id="account" placeholder="Ingrese su numero de cuenta">
               </form>
           </div>
