@@ -119,7 +119,10 @@ function validate(){
     let creditcardcode = document.getElementById("creditcard-code").value;
     let creditcardexpire = document.getElementById("creditcard-expire").value;
     let bankaccount = document.getElementById("account").value;
-    if(name.trim() !== "" && creditcard.trim() !== "" && creditcardcode.trim() !== "" && creditcardexpire.trim() !=="" || bankaccount.trim() != "") {
+    let calle = document.getElementById("calle").value;
+    let numeropuerta = document.getElementById("numero").value;
+    let localidad = document.getElementById("ciudad").value;
+    if(name.trim() !== "" && creditcard.trim() !== "" && creditcardcode.trim() !== "" && creditcardexpire.trim() !=="" && calle.trim() !== "" && numeropuerta.trim() !== "" && localidad.trim() !=="" || bankaccount.trim() != "" && calle.trim() !== "" && numeropuerta.trim() !== "" && localidad.trim() !== "") {
         Swal.fire("La compra ha sido exitosa.");
     }
    };
