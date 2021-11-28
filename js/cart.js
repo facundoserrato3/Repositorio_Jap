@@ -6,11 +6,19 @@ let micarrito=[]
 function borrar(){
    let productos = document.getElementsByClassName("prod");
    console.log(productos)
+   console.log(micarrito)
    for(let i=0; i<productos.length; i++) {
        let producto = productos[i]
-       nuevoCarrito = producto.remove()
+       let id = producto.getAttribute("id");
+       console.log(id);
+       micarrito.articles.splice(id,1);
+   console.log(micarrito);
+
+      
    }
-   mostrarCarrito(nuevoCarrito);
+    mostrarCarrito(micarrito);
+   calcularSubtotal();
+  
    
 
 }
@@ -68,29 +76,29 @@ function mostrarCarrito(array){
             carrito.currency = "UYU"
             
         contenidoparaadjuntar +=
-        `<tr class="prod">
+        `<tr class="prod" id="${i}">
         <td ><img src="${carrito.src}" width="100" </td>
       <td>${carrito.name}</td>
-    <td><input class="form-control cant" type="number" min="1" id="cant${i}" value="${carrito.count}" onchange="calcularSubtotal()" ></td>
+    <td><input class="form-control cant" type="number" min="1" value="${carrito.count}" onchange="calcularSubtotal()" ></td>
     
     <td >$ <span class="precio">${carrito.unitCost}</span></td> 
     <td class="subt">$ ${carrito.count * carrito.unitCost}</td>
 
-    <td><button class="btn btn-danger btn-block" onclick="borrar()">Borrar</button></td>     </tr>`
+    <td><button class="btn btn-danger btn-block"  onclick="borrar()">Borrar</button></td>     </tr>`
     
     
     
         }
         else {         
             contenidoparaadjuntar += 
-            `<tr class="prod">
+            `<tr class="prod" id="${i}">
             <td ><img src="${carrito.src}" width="100"></td>
           <td>${carrito.name}</td>
-        <td><input class="form-control cant" type="number" value="${carrito.count}" id="cant${i}" onchange="calcularSubtotal()" min="1"></td>
+        <td><input class="form-control cant" type="number" value="${carrito.count}" onchange="calcularSubtotal()" min="1"></td>
         <td >$ <span class="precio">${carrito.unitCost}</span></td> 
         <td class="subt">$ ${carrito.count * carrito.unitCost}</td>
      
-        <td><button class="btn btn-danger btn-block" onclick="borrar()">Borrar</button></td>     </tr>`
+        <td><button class="btn btn-danger btn-block"  onclick="borrar()">Borrar</button></td>     </tr>`
         
         
             

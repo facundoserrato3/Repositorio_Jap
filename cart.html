@@ -177,25 +177,25 @@
               <input type="radio" name="paytype" id="creditcard" class="radiobutton1">
               </div>
               <div class="form-container">
-       <form action="" class="form-display-none was-validated"  id="credit-card-form">
+       <form action="http://localhost:3000/cart" class="form-display-none was-validated"  id="credit-card-form" method="POST">
           <div class="row">
               <div class="form-group col-sm-6">
               <label for="username">Nombre</label>
-           <input type="text" class="form-control " id="username" placeholder="Nombre del titular" value="" required>
+           <input type="text" class="form-control " id="username" placeholder="Nombre del titular" value="" name="nombre" required>
           </div>
           <div class="form-group col-sm-6">
               <label for="creditcard-number">Número de tarjeta</label>
-           <input type="number" class="form-control" id="creditcard-number" placeholder="Numero de su tarjeta" value="" required>
+           <input type="number" class="form-control" id="creditcard-number" placeholder="Numero de su tarjeta" value="" name="numtarjeta" required>
           </div>
           </div>
           <div class="row">
           <div class="form-group col-sm-4">
               <label for="creditcard-code">CVV</label>
-           <input type="number" class="form-control" name="" id="creditcard-code" placeholder="CVV" value="" required>
+           <input type="number" class="form-control" name="" id="creditcard-code" placeholder="CVV" value="" name="numcvv" required>
           </div>
           <div class="form-group col-sm-8">
               <label for="creditcard-expire">Vencimiento de la tarjeta</label>
-           <input type="date" class="form-control" id="creditcard-expire" placeholder="Vencimiento MM/AA" value="" required>
+           <input type="date" class="form-control" id="creditcard-expire" placeholder="Vencimiento MM/AA" value="" name="ventarjeta" required>
            
           </div>
           </div>
@@ -208,8 +208,8 @@
           <input type="radio"  name="paytype" id="bankdeposit" class="radiobutton2">
           </div>
           <div>
-              <form action="" class="form-display-none was-validated" id="bank-form">
-                  <input type="text" class="form-control" id="account" placeholder="Ingrese su numero de cuenta">
+              <form action="http://localhost:3000/cart" class="form-display-none was-validated" id="bank-form" method="POST">
+                  <input type="text" class="form-control" id="account" placeholder="Ingrese su numero de cuenta" name="numerocuenta">
               </form>
           </div>
        </div>
